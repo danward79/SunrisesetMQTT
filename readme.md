@@ -20,7 +20,8 @@ The tool takes the command line switches below:
 - s server IP:Port eg. 192.168.0.7:1883 *default is ":1883"*
 - r retain MQTT state *default is set to false*
 
-
+As an example, the following could be used as command lines
 ```bash
-./sunrise -s 192.168.0.7:1883
+SunrisesetMQTT
+SunrisesetMQTT -r -s 192.168.0.7:1883
 ```

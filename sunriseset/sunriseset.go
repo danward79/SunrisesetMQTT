@@ -77,10 +77,10 @@ func (l *Loc) schedule(t time.Time, i int, rise bool, ch chan map[string]string)
 		e, _ = l.cronSch.AddFunc(cronFormat(t.Add(time.Duration(i)*time.Hour)), func() {
 			l.cronSch.Remove(e)
 			if rise {
-				send("**sunrise", fmt.Sprintf("%d", i), ch)
+				send("sunrise", fmt.Sprintf("%d", i), ch)
 				l.schedule(l.nextSunrise(), i, true, ch)
 			} else {
-				send("**sunset", fmt.Sprintf("%d", i), ch)
+				send("sunset", fmt.Sprintf("%d", i), ch)
 				l.schedule(l.nextSunset(), i, false, ch)
 			}
 		})
