@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	"github.com/danward79/SunrisesetMQTT/sunriseset"
+	"github.com/danward79/sunrise"
 	proto "github.com/huin/mqtt"
 	"github.com/jeffallen/mqtt"
 )
@@ -38,7 +38,7 @@ func main() {
 	flag.Parse()
 
 	mqttClient := newClient(*mqttServer)
-	ch := sunriseset.New(*lat, *long).Start()
+	ch := sunrise.New(*lat, *long).Start()
 
 	for {
 		select {
