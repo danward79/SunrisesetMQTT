@@ -3,6 +3,7 @@ package sunriseset
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/danward79/cron"
@@ -34,9 +35,8 @@ func (l *Loc) List() {
 
 //Start the process
 func (l *Loc) Start() chan map[string]string {
-	fmt.Println(l)
-	fmt.Println("Next Sunset", l.nextSunset())
-	fmt.Println("Next Sunrise", l.nextSunrise())
+	log.Println(l)
+	log.Println("Next Sunset:", l.nextSunset(), " Next Sunrise:", l.nextSunrise())
 	chOut := make(chan map[string]string)
 	l.cronSch.Start()
 
