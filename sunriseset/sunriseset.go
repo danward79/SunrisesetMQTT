@@ -35,6 +35,8 @@ func (l *Loc) List() {
 //Start the process
 func (l *Loc) Start() chan map[string]string {
 	fmt.Println(l)
+	fmt.Println("Next Sunset", l.nextSunset())
+	fmt.Println("Next Sunrise", l.nextSunrise())
 	chOut := make(chan map[string]string)
 	l.cronSch.Start()
 
